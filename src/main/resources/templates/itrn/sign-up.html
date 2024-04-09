@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="/static/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="/static/img/favicon.png">
+  <title>
+    Intranet 회원가입 화면
+  </title>
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+  <!-- Nucleo Icons -->
+  <link href="/static/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="/static/css/nucleo-svg.css" rel="stylesheet" />
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+  <link href="/static/css/nucleo-svg.css" rel="stylesheet" />
+  <!-- Jquery library -->
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+  <!-- CSS Files -->
+  <link id="pagestyle" href="/static/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
+</head>
+
+<body class="">
+  <div class="container position-sticky z-index-sticky top-0">
+    <div class="row">
+      <div class="col-12">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg blur border-radius-lg top-0 z-index-3 shadow position-absolute mt-4 py-2 start-0 end-0 mx-4">
+          <div class="container-fluid">
+            <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 " href="/itrn/main">
+              Dashboard
+            </a>
+            <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon mt-2">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+              </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navigation">
+              <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                  <a class="nav-link d-flex align-items-center me-2 active" aria-current="page" href="../pages/dashboard.html">
+                    <i class="fa fa-chart-pie opacity-6 text-dark me-1"></i>
+                    대시보드
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link me-2" href="../pages/profile.html">
+                    <i class="fa fa-user opacity-6 text-dark me-1"></i>
+                    메뉴(예정)
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link me-2" href="/itrn/sign-up">
+                    <i class="fas fa-user-circle opacity-6 text-dark me-1"></i>
+                    회원가입
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link me-2" href="/itrn/sign-in">
+                    <i class="fas fa-key opacity-6 text-dark me-1"></i>
+                    로그인
+                  </a>
+                </li>
+              </ul>
+              <ul class="navbar-nav d-lg-block d-none">
+                <li class="nav-item">
+                  <a href="https://www.creative-tim.com/product/argon-dashboard" class="btn btn-sm mb-0 me-1 btn-primary">Free Download</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <!-- End Navbar -->
+      </div>
+    </div>
+  </div>
+  <main class="main-content  mt-0">
+    <section>
+      <div class="page-header min-vh-100">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column mx-lg-0 mx-auto">
+              <div class="card card-plain">
+                <div class="card-header pb-0 text-start">
+                  <h4 class="font-weight-bolder mt-7">회원가입</h4>
+<!--                   <p class="mb-0"> 로그인 후 이용이 가능합니다.</p> -->
+                </div>
+                <div class="card-body">
+                  <form action="/user/sign-up-form" role="form" method="POST">
+                    <div class="mb-3">
+                      <input type="text" class="form-control form-control-lg" placeholder="이메일" id="userEmail">
+                    </div>
+                    <div class="mb-3">
+                      <input type="text" class="form-control form-control-lg" placeholder="닉네임" id="userName">
+                    </div>
+                    <div class="mb-3">
+                      <input type="password" class="form-control form-control-lg" placeholder="비밀번호" id="userPw">
+                    </div>
+                    <div class="mb-3">
+                      <input type="text" class="form-control form-control-lg" placeholder="전화번호" id="userPhone">
+                    </div>
+                    <div class="text-center">
+                      <button type="button" class="btn btn-lg btn-primary btn-lg w-100 mb-0" id="submitBtn">회원가입</button>
+                    </div>
+                  </form>
+                </div>
+                <div class="card-footer text-center pt-0 px-lg-2 px-1">
+                  <p class="mb-4 text-sm mx-auto">
+                    이미 계정이 있으신가요?
+                    <a href="/itrn/sign-up" class="text-primary text-gradient font-weight-bold">로그인 바로가기</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 end-0 text-center justify-content-center flex-column">
+              <div class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center overflow-hidden" style="background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signin-ill.jpg');
+          		   background-size: cover;">
+                <span class="mask bg-gradient-primary opacity-6"></span>
+                <h4 class="mt-5 text-white font-weight-bolder position-relative"><!-- 로그인 제목 --></h4>
+                <p class="text-white position-relative"><!-- 로그인 내용 --></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!--   Core JS Files   -->
+  <script src="/static/js/core/popper.min.js"></script>
+  <script src="/static/js/core/bootstrap.min.js"></script>
+  <script src="/static/js/plugins/perfect-scrollbar.min.js"></script>
+  <script src="/static/js/plugins/smooth-scrollbar.min.js"></script>
+  <script>
+  
+  	/* 부트스트랩 스크립트 */
+    var win = navigator.platform.indexOf('Win') > -1;
+    if (win && document.querySelector('#sidenav-scrollbar')) {
+      var options = {
+        damping: '0.5'
+      }
+      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+    }
+  </script>
+  <!-- Github buttons -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="/static/js/argon-dashboard.min.js?v=2.0.4"></script>
+</body>
+<script>
+const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; 
+const NamePattern = /^[ㄱ-ㅎ가-힣a-zA-Z0-9]+$/;
+const PwPattern = /^(?=.*[a-zA-Z])(?=.*[0-9]).{8,25}$/;
+const PhonePattern = /^010\d{8,9}$/;
+
+$('document').ready(function(){
+    $('#submitBtn').on('click', function() {
+
+    	/* Input 회원가입 예외처리 */
+		const userEmail = $('#userEmail').val();
+		const userName = $('#userName').val();
+		const userPw = $('#userPw').val();
+		const userPhone =  $('#userPhone').val();
+		
+		if(userEmail === ""){
+			alert("이메일을 입력해주세요.");
+			return;
+		}else if(!emailPattern.test(userEmail)){
+			alert("이메일 형식에 맞지않습니다.");
+			return;
+		}else if(userName === ""){
+			alert("닉네임을 입력해주세요.");
+			return;
+		}else if(!NamePattern.test(userName)){
+			alert("닉네임은 한글, 영어, 숫자만 가능합니다.");
+			return;
+		}else if(userPw === ""){
+			alert("비밀번호를 입력해주세요.");
+			return;
+		}else if(!PwPattern.test(userPw)) {
+			alert("비밀번호는 영문 숫자 조합 8자리 이상 입니다.");
+			return;
+		}else if(userPhone === ""){
+			alert("전화번호를 입력해주세요.");
+			return;
+		}else if(!PhonePattern.test(userPhone)) {
+			alert("전화번호는 010으로 시작하는 11자리 입니다.");
+			return;
+		}
+		/* AJAX 요청 DATA */
+		const data = {
+				userEmail: $('#userEmail').val(),
+				userName: $('#userName').val(),
+				userPw: $('#userPw').val(),
+				userPhone:  $('#userPhone').val()
+		};
+    	
+        $.ajax({
+            type: "POST",
+            url: "/user/sign-up-form",
+            data: JSON.stringify(data), 		   
+            contentType: "application/json", 		   
+            dataType: "json", 
+            success: function(data) {
+  				alert("회원가입 성공했습니다.");
+  				window.location.href = "/itrn/sign-in";
+            },
+            error: function(XMLHttpRequest, errorThrown, textStatus) {
+            	console.log("XMLHttpRequest" + XMLHttpRequest + errorThrown + textStatus);
+            	alert("실패 했습니다!");
+            }
+        });
+    });
+});
+</script>
+</html>
