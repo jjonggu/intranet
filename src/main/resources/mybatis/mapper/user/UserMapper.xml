@@ -19,5 +19,24 @@
         	      , #{userPhone}
         	      , current_date)
     </insert>
+    
+	<select id="setSignInForm" resultType="UserDto">
+	    SELECT USER_EMAIL
+	    	 , USER_PW 
+	      FROM USER_T
+	     WHERE USER_EMAIL = #{userEmail}
+	       AND USER_PW = #{userPw}
+	</select>
+	
+	<select id="getUserList" resultType="UserDto">
+		SELECT USER_NO
+			 , USER_EMAIL
+			 , USER_NAME
+			 , USER_PW
+			 , USER_PHONE
+			 , SIGNUP_DT
+		  FROM USER_T
+	</select>
+
 
 </mapper>

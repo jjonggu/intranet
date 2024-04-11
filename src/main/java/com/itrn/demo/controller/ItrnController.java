@@ -13,6 +13,11 @@ public class ItrnController {
 		return "itrn/index";
 	 }
 	
+	@GetMapping("board")
+	public String Board() {
+		return "itrn/tables";
+	}
+	
 	@GetMapping("/sign-in")
 	public String SignIn() {
 		return "itrn/sign-in";
@@ -22,5 +27,4 @@ public class ItrnController {
 	public String SignUp() {
 		return "itrn/sign-up";
 	}
-
 }

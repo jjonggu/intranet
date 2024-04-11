@@ -1,5 +1,7 @@
  package com.itrn.demo.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.itrn.demo.dto.UserDto;
@@ -17,6 +19,14 @@ public class UserService {
 		// 회원가입 예외처리 Msg console.log 메세지로 받기위해 메서드 타입을 String 받았다.
 		// 하지만 insert는 resultType 받을게 없기에.. 생각 다시 해보기로
 		userMapper.setSignUpForm(userDto);
+	}
+
+	public UserDto setSignInForm(UserDto userDto) {
+		return userMapper.setSignInForm(userDto);
+	}
+
+	public List<UserDto> getUserList(UserDto userDto) {
+		return userMapper.getUserList(userDto);
 	}
 
 }
