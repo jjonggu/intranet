@@ -29,4 +29,8 @@ public class UserService {
 		return userMapper.getUserList(userDto);
 	}
 
+	public UserDto getUserDetail(String userEmail) {
+		return userMapper.getUserDetail(userEmail);
+	}
+
 }

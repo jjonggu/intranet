@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{board/layout/basic}">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -61,8 +61,8 @@
                 </li>
                 <li class="nav-item">
                   <a class="nav-link me-2" href="/itrn/sign-in">
-                    <i class="fas fa-key opacity-6 text-dark me-1"></i>
-                    로그인
+                    <i class="fas fa-key opacity-6 text-dark me-1" id="SignInName"></i>
+                    	로그인
                   </a>
                 </li>
               </ul>
@@ -115,8 +115,7 @@
               </div>
             </div>
             <div class="col-6 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 end-0 text-center justify-content-center flex-column">
-              <div class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center overflow-hidden" style="background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signin-ill.jpg');
-          background-size: cover;">
+              <div class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center overflow-hidden" style="background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signin-ill.jpg'); background-size: cover;">
                 <span class="mask bg-gradient-primary opacity-6"></span>
                 <h4 class="mt-5 text-white font-weight-bolder position-relative"><!-- 로그인 제목 --></h4>
                 <p class="text-white position-relative"><!-- 로그인 내용 --></p>
@@ -177,7 +176,7 @@ $('document').ready(function(){
             dataType: "json", 
             success: function(data) {
   				alert("로그인 성공했습니다.");
-  				window.location.href = "/itrn/main";
+			    window.location.href = "/itrn/main";
             },
             error: function(xhr, status, errors) {
             	alert("로그인 실패했습니다.");

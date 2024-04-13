@@ -15,4 +15,6 @@ public interface UserMapper {
 
 	List<UserDto> getUserList(UserDto userDto);
 
+	UserDto getUserDetail(String userEmail);
+
 }

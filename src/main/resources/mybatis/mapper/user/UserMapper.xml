@@ -36,7 +36,16 @@
 			 , USER_PHONE
 			 , SIGNUP_DT
 		  FROM USER_T
+	  ORDER BY USER_NO DESC
 	</select>
-
-
+	
+	<select id="getUserDetail" resultType="UserDto">
+		SELECT USER_NO
+			 , USER_NAME
+			 , USER_PW
+			 , USER_PHONE
+			 , SIGNUP_DT
+		  FROM USER_T
+		 WHERE USER_EMAIL = #{userEmail}
+	</select>
 </mapper>
